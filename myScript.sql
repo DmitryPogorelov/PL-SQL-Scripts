@@ -1,3 +1,10 @@
+/*************************************************************
+**                                                          **
+**  1. РЎРєСЂРёРїС‚ РЅРµ СЃРѕР·РґР°С‘С‚ РќРРљРђРљРРҐ РѕР±СЉРµРєС‚РѕРІ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…     **
+**  2. РЎРєСЂРёРїС‚ РёСЃРїРѕР»СЊР·СѓРµС‚ С‚РѕР»СЊРєРѕ DBMS_OUTPUT                 **
+**  3. --Р—Р°РїСѓСЃРєР°РµРј С‡РµСЂРµР· SQL * Plus--                       **
+**                                                          **
+*************************************************************/
 SET SERVEROUTPUT ON SIZE 3000;
 SET SERVEROUTPUT ON FORMAT WRAPPED;
 DECLARE
@@ -14,7 +21,7 @@ j NUMBER := 0;
 k NUMBER := 0;
 
 BEGIN
--------------------------Строка 1-----------------------
+-------------------------РЎС‚СЂРѕРєР° 1-----------------------
 rowId := 1;
 FOR j IN 1..69 LOOP
 coordArray_v.EXTEND;
@@ -22,7 +29,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 2-----------------------
+-------------------------РЎС‚СЂРѕРєР° 2-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -36,7 +43,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 3-----------------------
+-------------------------РЎС‚СЂРѕРєР° 3-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -114,7 +121,7 @@ coordArray_v.EXTEND;
 coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := 44;
 coordArray_v(coordArray_v.LAST).charN := '-';
--------------------------Строка 4-----------------------
+-------------------------РЎС‚СЂРѕРєР° 4-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -128,7 +135,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 5-----------------------
+-------------------------РЎС‚СЂРѕРєР° 5-----------------------
 rowId := rowId + 1;
 FOR j IN 1..69 LOOP
 coordArray_v.EXTEND;
@@ -136,9 +143,9 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 6-----------------------
+-------------------------РЎС‚СЂРѕРєР° 6-----------------------
 rowId := rowId + 1;
--------------------------Строка 7-----------------------
+-------------------------РЎС‚СЂРѕРєР° 7-----------------------
 rowId := rowId + 1;
 FOR j IN 13..19 LOOP
 coordArray_v.EXTEND;
@@ -146,7 +153,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 7-----------------------
+-------------------------РЎС‚СЂРѕРєР° 7-----------------------
 rowId := rowId + 1;
 FOR j IN 12..14 LOOP
 coordArray_v.EXTEND;
@@ -196,7 +203,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 8-----------------------
+-------------------------РЎС‚СЂРѕРєР° 8-----------------------
 rowId := rowId + 1;
 FOR j IN 12..14 LOOP
 coordArray_v.EXTEND;
@@ -264,7 +271,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 9-----------------------
+-------------------------РЎС‚СЂРѕРєР° 9-----------------------
 rowId := rowId + 1;
 FOR j IN 13..14 LOOP
 coordArray_v.EXTEND;
@@ -326,7 +333,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 10-----------------------
+-------------------------РЎС‚СЂРѕРєР° 10-----------------------
 rowId := rowId + 1;
 FOR j IN 14..19 LOOP
 coordArray_v.EXTEND;
@@ -372,7 +379,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 11-----------------------
+-------------------------РЎС‚СЂРѕРєР° 11-----------------------
 rowId := rowId + 1;
 FOR j IN 13..14 LOOP
 coordArray_v.EXTEND;
@@ -440,7 +447,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 12-----------------------
+-------------------------РЎС‚СЂРѕРєР° 12-----------------------
 rowId := rowId + 1;
 FOR j IN 12..13 LOOP
 coordArray_v.EXTEND;
@@ -508,7 +515,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 13-----------------------
+-------------------------РЎС‚СЂРѕРєР° 13-----------------------
 rowId := rowId + 1;
 FOR j IN 11..12 LOOP
 coordArray_v.EXTEND;
@@ -558,9 +565,9 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 14-----------------------
+-------------------------РЎС‚СЂРѕРєР° 14-----------------------
 rowId := rowId + 1;
--------------------------Строка 15-----------------------
+-------------------------РЎС‚СЂРѕРєР° 15-----------------------
 rowId := rowId + 1;
 FOR j IN 10..16 LOOP
 coordArray_v.EXTEND;
@@ -598,7 +605,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 16-----------------------
+-------------------------РЎС‚СЂРѕРєР° 16-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -654,7 +661,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 17-----------------------
+-------------------------РЎС‚СЂРѕРєР° 17-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -704,7 +711,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 18-----------------------
+-------------------------РЎС‚СЂРѕРєР° 18-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -754,7 +761,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 19-----------------------
+-------------------------РЎС‚СЂРѕРєР° 19-----------------------
 rowId := rowId + 1;
 FOR j IN 10..16 LOOP
 coordArray_v.EXTEND;
@@ -798,7 +805,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 20-----------------------
+-------------------------РЎС‚СЂРѕРєР° 20-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -842,7 +849,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 21-----------------------
+-------------------------РЎС‚СЂРѕРєР° 21-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -892,7 +899,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 22-----------------------
+-------------------------РЎС‚СЂРѕРєР° 22-----------------------
 rowId := rowId + 1;
 FOR j IN 10..11 LOOP
 coordArray_v.EXTEND;
@@ -936,9 +943,9 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '@';
 END LOOP;
--------------------------Строка 23-----------------------
+-------------------------РЎС‚СЂРѕРєР° 23-----------------------
 rowId := rowId + 1;
--------------------------Строка 24-----------------------
+-------------------------РЎС‚СЂРѕРєР° 24-----------------------
 rowId := rowId + 1;
 FOR j IN 1..70 LOOP
 coordArray_v.EXTEND;
@@ -946,7 +953,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 25-----------------------
+-------------------------РЎС‚СЂРѕРєР° 25-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -960,7 +967,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 26-----------------------
+-------------------------РЎС‚СЂРѕРєР° 26-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -998,7 +1005,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 27-----------------------
+-------------------------РЎС‚СЂРѕРєР° 27-----------------------
 rowId := rowId + 1;
 FOR j IN 1..2 LOOP
 coordArray_v.EXTEND;
@@ -1012,7 +1019,7 @@ coordArray_v(coordArray_v.LAST).rowN := rowId;
 coordArray_v(coordArray_v.LAST).colN := j;
 coordArray_v(coordArray_v.LAST).charN := '#';
 END LOOP;
--------------------------Строка 28-----------------------
+-------------------------РЎС‚СЂРѕРєР° 28-----------------------
 rowId := rowId + 1;
 FOR j IN 1..70 LOOP
 coordArray_v.EXTEND;
