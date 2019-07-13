@@ -1,11 +1,11 @@
 /********************************************************************************
-         ---Код для создания объектов для пакета make_schedule---
+         ---ГЉГ®Г¤ Г¤Г«Гї Г±Г®Г§Г¤Г Г­ГЁГї Г®ГЎГєГҐГЄГІГ®Гў Г¤Г«Гї ГЇГ ГЄГҐГІГ  make_schedule---
 *********************************************************************************/
 
---Создаем тип для коллекции, в которой храним рабочие дни для пятидневщиков--
+--Г‘Г®Г§Г¤Г ГҐГ¬ ГІГЁГЇ Г¤Г«Гї ГЄГ®Г«Г«ГҐГЄГ¶ГЁГЁ, Гў ГЄГ®ГІГ®Г°Г®Г© ГµГ°Г Г­ГЁГ¬ Г°Г ГЎГ®Г·ГЁГҐ Г¤Г­ГЁ Г¤Г«Гї ГЇГїГІГЁГ¤Г­ГҐГўГ№ГЁГЄГ®Гў--
 CREATE TYPE week_work_days_t IS TABLE OF NUMBER(1);
 
---Таблица для хранения сведений о сотрудниках--
+--Г’Г ГЎГ«ГЁГ¶Г  Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г±ГўГҐГ¤ГҐГ­ГЁГ© Г® Г±Г®ГІГ°ГіГ¤Г­ГЁГЄГ Гµ--
 CREATE TABLE employees (
 emp_id                 NUMBER(8)          NOT NULL CONSTRAINT employees_PK PRIMARY KEY,
 position               VARCHAR2(15)       NOT NULL,
@@ -17,7 +17,7 @@ NESTED TABLE workdays_list STORE AS workdays_list_nt;
 
 CREATE BITMAP INDEX employees_2_col_index ON employees (work_days, holidays);
 
---СОздаём последовательность для первичных ключей таблицы employee
+--Г‘ГЋГ§Г¤Г ВёГ¬ ГЇГ®Г±Г«ГҐГ¤Г®ГўГ ГІГҐГ«ГјГ­Г®Г±ГІГј Г¤Г«Гї ГЇГҐГ°ГўГЁГ·Г­Г»Гµ ГЄГ«ГѕГ·ГҐГ© ГІГ ГЎГ«ГЁГ¶Г» employee
 
 CREATE SEQUENCE employees_seq
  START WITH     1
@@ -25,7 +25,7 @@ CREATE SEQUENCE employees_seq
  MAXVALUE       99999999
  NOCYCLE;
 
---Заполняем таблицу с сотрудниками данными--
+--Г‡Г ГЇГ®Г«Г­ГїГҐГ¬ ГІГ ГЎГ«ГЁГ¶Гі Г± Г±Г®ГІГ°ГіГ¤Г­ГЁГЄГ Г¬ГЁ Г¤Г Г­Г­Г»Г¬ГЁ--
 
 INSERT INTO employees VALUES (employees_seq.NEXTVAL, 'Director', 5, 2, week_work_days_t(1,2,3,4,5));
 INSERT INTO employees VALUES (employees_seq.NEXTVAL, 'Dir_deputy', 5, 2, week_work_days_t(1,4,5,6,7));
@@ -35,7 +35,7 @@ INSERT INTO employees VALUES (employees_seq.NEXTVAL, 'Seller 3', 2, 2, NULL);
 
 COMMIT;
 
---Создаем таблицу для графиков
+--Г‘Г®Г§Г¤Г ГҐГ¬ ГІГ ГЎГ«ГЁГ¶Гі Г¤Г«Гї ГЈГ°Г ГґГЁГЄГ®Гў
 
 CREATE TABLE work_schedule (
 sched_id     NUMBER(15)    NOT NULL CONSTRAINT work_sched_PK PRIMARY KEY,
@@ -51,15 +51,15 @@ CONSTRAINT work_sched_employees_FK
   REFERENCES employees (emp_id)
 );
 
---Создаем последовательность для первичных ключей таблицы work_schedule--
+--Г‘Г®Г§Г¤Г ГҐГ¬ ГЇГ®Г±Г«ГҐГ¤Г®ГўГ ГІГҐГ«ГјГ­Г®Г±ГІГј Г¤Г«Гї ГЇГҐГ°ГўГЁГ·Г­Г»Гµ ГЄГ«ГѕГ·ГҐГ© ГІГ ГЎГ«ГЁГ¶Г» work_schedule--
 CREATE SEQUENCE work_schedule_seq
  START WITH     1
  INCREMENT BY   1
  MAXVALUE       999999999999999
  NOCYCLE;
  
---Создаём индекс для таблички с расписаниями. Тестирование показало, что bitmap index позволяет 
---снизить количество чтений при запросах по сравнению с обычным индексом.
+--Г‘Г®Г§Г¤Г ВёГ¬ ГЁГ­Г¤ГҐГЄГ± Г¤Г«Гї ГІГ ГЎГ«ГЁГ·ГЄГЁ Г± Г°Г Г±ГЇГЁГ±Г Г­ГЁГїГ¬ГЁ. Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЇГ®ГЄГ Г§Г Г«Г®, Г·ГІГ® bitmap index ГЇГ®Г§ГўГ®Г«ГїГҐГІ 
+--Г±Г­ГЁГ§ГЁГІГј ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г·ГІГҐГ­ГЁГ© ГЇГ°ГЁ Г§Г ГЇГ°Г®Г±Г Гµ ГЇГ® Г±Г°Г ГўГ­ГҐГ­ГЁГѕ Г± Г®ГЎГ»Г·Г­Г»Г¬ ГЁГ­Г¤ГҐГЄГ±Г®Г¬.
 CREATE BITMAP INDEX work_schedule_3_col_index ON work_schedule (emp_id, month_num, year_num);
 
 CREATE BITMAP INDEX work_schedule_emp_col_index ON work_schedule (emp_id);
